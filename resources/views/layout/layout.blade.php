@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
-	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>App</title>
+	<link rel="stylesheet" href="{{ asset('assets/css/bulma.min.css') }}">
 </head>
 <body>
 
-	<div class="container">
-		@yield('content')
+	<div class="">
+		<section class="">
+			@yield('content')
+		</section>
 	</div>
 
-	<script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('assets/js/bootstrap.js') }}"></script>
 </body>
 </html>

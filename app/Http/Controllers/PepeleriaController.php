@@ -6,53 +6,53 @@ use App\Models\Computadora;
 use App\Http\Requests\StoreComputadoraRequest;
 use App\Http\Requests\UpdateComputadoraRequest;
 use League\CommonMark\Delimiter\Delimiter;
-
+k
 class ComputadoraController extends Controller
 {
 
     public function index()
     {
-        return view('computadoras.index')->with('computadoras', Computadora::all());
+        return view('papelerias.index')->with('papelerias', Computadora::all());
     }
 
 
     public function create()
     {
-        return view('computadoras.create');
+        return view('papelerias.create');
     }
 
 
     public function store(StoreComputadoraRequest $request)
     {
         $request->validate([
-            'marca'             => 'required',
-            'modelo'            => 'required',
-            'descripcion'       => 'required',
-            'tipo'              => 'required',
-            'precioDeCompra'    => 'required',
-            'precioDeVenta'     => 'required',
-            'stock'             => 'required',
-            'disponible'        => 'required'
+            'lapiceros',
+            'libretas',
+            'gomas',
+            'hojas blancas',
+            'hojas de colores',
+            'precioDeCompra',
+            'precioDeVenta',
+            'disponible'
         ]);
 
         Computadora::create([
-            'marca'             => $request->marca,
-            'modelo'            => $request->modelo,
-            'descripcion'       => $request->descripcion,
-            'tipo'              => $request->tipo,
+            'lapiceros'         => $request->lapiceros,
+            'libretas'          => $request->libretas,
+            'gomas'             => $request->gomas,
+            'hojas blancas'     => $request->hojasblancas,
+            'hojas de colores'  => $request->hojasDeColores,
             'precioDeCompra'    => $request->precioDeCompra,
             'precioDeVenta'     => $request->precioDeVenta,
-            'stock'             => $request->stock,
             'disponible'        => $request->disponible
         ]);
 
-        return redirect()->route('computadora.index');
+        return redirect()->route('papelerias.index');
     }
 
 
     public function show(Computadora $computadora)
     {
-    return view ('computadoras.show' , compact('computadora'));
+    return view ('papelerias.show' , compact('papelerias'));
 
 
     }
@@ -73,12 +73,12 @@ class ComputadoraController extends Controller
     public function destroy(Computadora $computadora)
     {
         $computadora->delete();
-        return redirect()->route('computadora.index');
+        return redirect()->route('papelerias.index');
     }
     public function datatable()
 {
     $Computadoras = Computadora::all();
-    return view('computadoras.datatable', compact('computadoras'));
+    return view('papelerias.datatable', compact('papelerias'));
 }
 
 }
